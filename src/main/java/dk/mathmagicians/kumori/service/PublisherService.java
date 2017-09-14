@@ -9,7 +9,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import dk.mathmagicians.kumori.KumoriApplication;
 import dk.mathmagicians.kumori.domain.ConfluencePage;
 
 @Service 
@@ -25,7 +24,7 @@ private static final Logger log = LoggerFactory.getLogger(PublisherService.class
 	}
 
 	@Bean
-	public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
+	public CommandLineRunner publisherRunner(RestTemplate restTemplate) throws Exception {
 		return args -> {
 			ConfluencePage page = restTemplate.getForObject( confluenceUrl,
 					ConfluencePage.class);

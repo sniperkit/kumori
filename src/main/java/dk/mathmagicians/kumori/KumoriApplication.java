@@ -12,7 +12,7 @@ public class KumoriApplication {
 
 	
 	public static void main(String[] args) {
-		log.info("Starting Kumori application ... ");
+		log.info("Starting Kumori application ... <3<3<3");
 		SpringApplication.run(KumoriApplication.class, args);
 	}
 	
