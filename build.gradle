@@ -17,6 +17,9 @@ apply plugin: 'org.springframework.boot'
 jar {
 	baseName = 'kumori'
 	version =  '0.1.0'
+	manifest {
+		attributes 'Implementation-Title': 'Kumori',  'Implementation-Version': version
+	}
 }
 
 

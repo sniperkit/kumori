@@ -19,7 +19,7 @@ public class KumoriCli// implements CommandMarker
 		this.readerService = readerService;
 	}
 
-	@ShellMethod(value = "techmenu")
+	@ShellMethod(value = "Displays contents of the Technology Menu")
 	public String techmenu() {
 		// Check args, etc.
 		log.info("Invoking cli command");
