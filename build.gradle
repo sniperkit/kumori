@@ -25,6 +25,9 @@ repositories {
 	// Use 'jcenter' for resolving your dependencies.
 	// You can declare any Maven/Ivy/file repository here.
 	jcenter()
+	maven {
+		url 'https://repo.spring.io/libs-milestone'
+	}
 }
 
 //JVM settings
@@ -42,6 +45,7 @@ dependencies {
 	compile 'org.springframework.boot:spring-boot-starter-actuator'
 	compile("org.springframework:spring-web")
 	compile("com.fasterxml.jackson.core:jackson-databind")
+	compile 'org.springframework.shell:spring-shell-starter:2.0.0.M2'
 
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	
