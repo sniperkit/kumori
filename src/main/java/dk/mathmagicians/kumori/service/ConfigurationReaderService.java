@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 public class ConfigurationReaderService {
 	
 	private static final Logger log = LoggerFactory.getLogger(ConfigurationReaderService.class);
-	static final String slurper = "{\"name\": \"MongoDB\", \"id\": 1}";
+	public static final String slurper = "{\"name\": \"MongoDB\", \"id\": 1}";
 	
 	public String read(){
 		return slurper;

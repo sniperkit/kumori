@@ -32,4 +32,9 @@ private static final Logger log = LoggerFactory.getLogger(PublisherService.class
 		};
 	}
 
+	public void publish() {
+		
+		log.info("Retrieved following Confluence page: empty - todo - agata");
+	}
+
 }
