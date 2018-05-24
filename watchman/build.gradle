@@ -37,14 +37,29 @@ repositories {
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
-
+configurations {
+    cucumberRuntime {
+        extendsFrom testRuntime
+    }
+}
 
 task wrapper(type: Wrapper) {
     gradleVersion = '4.7'
 }
 
+//kudos to https://blog.knoldus.com/2017/08/20/scalagradlecucumber-a-holy-alliance/
+task cucumber(type: JavaExec) {
+    main = "cucumber.api.cli.Main"
+    classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+    args = ['--plugin', 'pretty', '--glue', 'com.knoldus', 'src/test/resources']
+}
+
+
+
 dependencies {
     compile 'org.scala-lang:scala-library:2.12.6'
-    testCompile 'org.scalatest:scalatest_2.12:3.0.5'
+    compile 'info.cukes:cucumber-scala_2.12:1.2.5'
     testCompile 'junit:junit:4.12'
+    testCompile 'info.cukes:cucumber-junit:1.2.5'
+  //  testCompile 'org.scalatest:scalatest_2.12:3.0.5'
 }
